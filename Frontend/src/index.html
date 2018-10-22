@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rangoo App</title>
+
+<base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>
+   $("body").on('click', '.sidebar-toggle', function () {
+       $("body").toggleClass("is-collapsed");
+   });
+   $.fn.showAngularModal = function(){
+     this.modal();
+     this.show(1);
+     $("body").addClass("modal-open");
+     this.addClass("show in");
+   };
+
+   $.fn.hideAngularModal = function(){
+    this.show(1);
+     $("body").removeClass("modal-open");
+     this.removeClass("show in");
+   }
+ </script>
+  <style>
+      #loader {
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background: #fff;
+        z-index: 90000;
+      }
+
+      #loader.fadeOut {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: calc(50% - 20px);
+        left: calc(50% - 20px);
+        background-color: #333;
+        border-radius: 100%;
+        -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+        animation: sk-scaleout 1.0s infinite ease-in-out;
+      }
+
+      @-webkit-keyframes sk-scaleout {
+        0% { -webkit-transform: scale(0) }
+        100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+
+      @keyframes sk-scaleout {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        } 100% {
+          -webkit-transform: scale(1.0);
+          transform: scale(1.0);
+          opacity: 0;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="../src/assets/css/bootstrap.css">
+<link rel="stylesheet" href="../src/assets/css/font-awesome.css">
+<link rel="stylesheet" href="../src/assets/css/themify-icons.css">
+<link rel="stylesheet" href="../src/assets/css/circle.css">
+
+<style>
+  .sidebar-menu::-webkit-scrollbar {
+      display: none;
+      width: 5px;
+  }
+
+  .sidebar-menu:hover > .sidebar-menu::-webkit-scrollbar {
+      display: block;
+  }
+
+  /* Track */
+  .sidebar-menu::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+
+  /* Handle */
+  .sidebar-menu::-webkit-scrollbar-thumb {
+      background: #2196f3 !important;
+  }
+
+  /* Handle on hover */
+  .sidebar-menu::-webkit-scrollbar-thumb:hover {
+      background: #2196f3 !important;
+  }
+
+  a:hover {
+      cursor: pointer;
+      cursor: hand;
+  }
+  .help-block p {
+    margin-bottom: 0;
+    font-size: 12px;
+    color: red;
+    font-weight: 500;
+}
+.mobile{
+    height: 100%;
+    margin: 0px;
+    width: auto;
+}
+.modal-title{
+    color: #000;
+    font-size: 25px;
+    margin-top: 6px;
+}
+.modal-dialog{
+  margin-top: 15% !important;
+}
+</style>
+
+</head>
+<body class="app">
+  <app-root></app-root>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../src/assets/css/styles.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="../src/assets/scripts/custom.js"></script>
+<script>
+  $("body").on('click', '.sidebar-toggle', function () {
+      $("body").toggleClass("is-collapsed");
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+
+
+
+<app-user-panel-navbar></app-user-panel-navbar>
+
+<!-- Power Management Modal -->
+<div class="modal fade" id="modalpower" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">End Contract</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="pT-50">
+                    <div class="form-group">
+                        <input type="text" class="form-control sign-in-input" placeholder="User">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control sign-in-input" placeholder="Amount">
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control sign-in-input" id="sel1">
+                            <option value="" disabled selected>Connection Type</option>
+                            <option>Network User</option>
+                            <option>App User</option>
+                        </select>
+                    </div>
+                    <div class="form-group pY-20 text-center">
+                        <a href="#">
+                            <button type="button" class="btn btn-sign-in btn-red-border">END CONTRACT</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--Sell Energy Modal-->
+
+<div class="modal fade" id="sell-energy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sell Energy</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Energy Type</th>
+                            <th scope="col">Total Available</th>
+                            <th scope="col">Sell Energy Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+                            <td>Coal</td>
+                            <td>100 KW</td>
+                            <td>
+                                <form>
+                                    <div class="form-group mB-0">
+                                        <input class="form-control input-table " type="text" placeholder="1 MW">
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>Turbine</td>
+                            <td>100 KW</td>
+                            <td>
+                                <form>
+                                    <div class="form-group mB-0">
+                                        <input class="form-control input-table " type="text" placeholder="1 MW">
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>DAM</td>
+                            <td>100 KW</td>
+                            <td>
+                                <form>
+                                    <div class="form-group mB-0">
+                                        <input class="form-control input-table " type="text" placeholder="1 MW">
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row padding-10">
+                    <div class="col-3">
+
+                        <b>Total</b>
+
+                    </div>
+
+                    <div class="col-9 text-right padding-r-25per">
+
+                        <b>250</b>
+
+                    </div>
+
+
+                    <div class="col-12 text-right padding-10 padding-r-15per">
+                        <a href="#">
+                            <button class="btn btn-end-contract btn-sell-energy">Sell Energy</button>
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>

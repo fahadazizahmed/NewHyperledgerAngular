@@ -1,0 +1,64 @@
+
+
+<div class="alert alert-success" *ngIf="emailVerificationResposne">
+  <strong>Success!</strong> {{emailVerificationResposne}}
+</div>
+
+
+
+<!-- Registration Form /-->
+
+
+
+
+<div class="container d-flex h-100">
+    <div class="row align-self-center w-100">
+        <div class="col-10 mx-auto">
+          <div class=" ">
+
+            <div class="col ">
+
+            </div>
+            <div class="col-6 offset-3 peer pX-20 pY-50 h-100 bgc-white scrollable pos-r text-center Aligner-item ">
+              <a href="#"><img class="logo" src="../../../assets/img/logo.png"></a>
+
+
+              <h4 class="fw-400 c-grey-900 mB-20 login">Forget Password</h4>
+              <p class="sign-in-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+
+              <!-- Registration Form -->
+<form [formGroup]="form" (submit)="submitForget()">
+
+
+    <!-- Email Input -->
+    <div class="form-group">
+      <div>
+        <input type="text" name="email" class="form-control sign-in-input" autocomplete="off" placeholder="*Email" formControlName="email" (blur)="checkEmail()" />
+        <!-- Validation -->
+        <div class="help-block text-left mT-10">
+          <p *ngIf="form.controls.email.errors?.required && form.controls.email.dirty"  class="text-danger">This field is required</p>
+          <p *ngIf="form.controls.email.errors?.validateEmail && form.controls.email.dirty" class="text-danger">This must be a valid e-mail</p>
+          </div>
+      </div>
+    </div>
+
+    <!-- Submit Input -->
+    <input  [disabled]=" !processing || !emailValid" type="submit" class="btn btn-sign-in" value="Submit" />
+
+  </form>
+
+              <div class="col mT-30">
+                <a class="forget-pass" [routerLink]="['/login']">Click here to Login </a>
+              </div>
+
+
+            </div>
+
+
+          </div>
+        </div>
+    </div>
+</div>
+
+
+

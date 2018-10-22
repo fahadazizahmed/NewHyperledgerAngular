@@ -1,0 +1,17 @@
+.sign-in-input{
+  border: none;
+  border-bottom: 1px solid #D9D8D8;
+  border-radius: 0;
+  padding-bottom: 20px;
+  font-size: 12px;
+  color: #535050;
+  width: 100%;
+}
+.btn-sign-in {
+  padding: 10px 80px;
+  background: #fff;
+  border: 1px solid #C6C6C6;
+  border-radius: 50px;
+  color: #535050;
+  font-weight: 600;
+}

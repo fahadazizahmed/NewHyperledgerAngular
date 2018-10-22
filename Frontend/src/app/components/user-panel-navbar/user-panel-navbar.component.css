@@ -1,0 +1,13 @@
+.main-content {
+  padding: 0px 0px 0px 0px;
+  min-height: calc(100vh - 0px);
+}
+.pb-3,
+.py-3 {
+  padding-bottom: 16px !important;
+  padding-bottom: 1rem !important;
+}
+.header {
+  width: calc(100% - 2%);
+  z-index: 800;
+}

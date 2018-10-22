@@ -1,0 +1,270 @@
+<div>
+  <div class="sidebar">
+      <div class="sidebar-inner">
+          <div class="sidebar-logo">
+              <div class="peers ai-c fxw-nw">
+                  <div class="peer peer-greed">
+                      <a class="sidebar-link td-n" href="/index.html">
+                          <div class="peers ai-c fxw-nw">
+                              <div class="peer">
+                                  <div>
+                                      <img class="rengoo-logo" src="../../../assets/img/logo.png" alt="Rengoo">
+                                  </div>
+                              </div>
+
+                          </div>
+                      </a>
+                  </div>
+                  <div class="peer">
+                      <div class="mobile-toggle sidebar-toggle">
+                          <a class="td-n">
+                              <i class="ti-arrow-circle-left"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <ul class="sidebar-menu scrollable pos-r">
+              <li class="nav-item mT-30 active">
+                  <a class="sidebar-link" [routerLink]="['/userPanel']" default>
+                          <span class="icon-holder">
+                              <i class="c-blue-500 ti-home"></i>
+                          </span>
+                      <span class="title" >Dashboard</span>
+                  </a>
+              </li>
+
+
+
+          </ul>
+      </div>
+  </div>
+  <div class="page-container">
+      <div class="header navbar">
+          <div class="header-container">
+              <ul class="nav-left">
+                  <li>
+                      <a id="sidebar-toggle" class="sidebar-toggle" href="javascript:void(0);">
+                          <i class="ti-menu"></i>
+                      </a>
+                  </li>
+                  <li class="search-box">
+                      <div class="nav-wrapper">
+                          <div class="sl-nav">
+                              <ul>
+                                  <li><b>English</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                      <div class="triangle"></div>
+                                      <ul>
+                                          <li><i class="sl-flag flag-de">
+                                              <div id="germany"></div>
+                                          </i> <span class="active">Deutsch</span></li>
+                                          <li><i class="sl-flag flag-usa">
+                                              <div id="germany"></div>
+                                          </i> <span>English</span></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </li>
+                  <li class="search-input">
+                      <input class="form-control" type="text" placeholder="Search...">
+                  </li>
+              </ul>
+              <ul class="nav-right">
+                <li class="notifications balance mT-20" *ngIf="userBalanceAmount">
+                    <p>Balance: <b> ${{userBalanceAmount}} </b></p>
+                </li>
+
+                  <li class="dropdown">
+                      <a class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" data-toggle="dropdown">
+                          <div class="peer mR-10">
+                              <img class="w-2r bdrs-50p" src="../../../assets/img/default.png" alt="">
+                          </div>
+                          <div class="peer">
+                              <span class="c-grey-900">{{user}}</span>
+                          </div>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li role="separator" class="divider"></li>
+                          <li *ngIf="authService.loggedIn()">
+                              <a class="d-b td-n pY-5 bgcH-grey-100 c-grey-700"
+                              (click)="onLogoutClick()"
+                              >
+                                  <i class="ti-power-off mR-10"></i>
+                                  <span>Logout</span>
+                              </a>
+                          </li>
+                      </ul>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <main class="main-content bgc-grey-100">
+          <div id="mainContent">
+              <div class="row gap-20 masonry pos-r height-100">
+                  <div class="col-md-12 ">
+                      <div class="row height-100">
+                          <div class="col-md-2 background-fff">
+                              <form>
+                                  <div class="form-group mB-0">
+                                      <input class="search-input" type="search" placeholder="Search...">
+                                  </div>
+                              </form>
+
+
+                              <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                  <a class="nav-item nav-link active border-left-1" id="nav-home-tab"
+                                     data-toggle="tab" href="#nav-current" role="tab" aria-controls="nav-home"
+                                     aria-selected="true">Current Consumption
+                                      <span class="d-block">5 KW/H</span>
+                                  </a>
+                                  <a class="nav-item nav-link border-left-2" id="nav-profile-tab" data-toggle="tab"
+                                     href="#nav-mix" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                      MIX
+                                      <span class="d-block">
+                                           <span *ngIf ="windPower_engergyResource">
+                                              {{windPower_engergyResource}} {{windPower_totalPercentage.toFixed(0)}}%
+                                          </span>
+
+                                          <span *ngIf ="solarPower_engergyResource">
+                                              {{solarPower_engergyResource}} {{solarPower_totalPercentage.toFixed(0)}}%
+                                          </span>
+
+                                          <span *ngIf ="nuclear_engergyResource">
+                                              {{nuclear_engergyResource}} {{nuclear_totalPercentage.toFixed(0)}}%
+                                          </span>
+
+                                          <span *ngIf ="geoPower_engergyResource">
+                                              {{geoPower_engergyResource}} {{geoPower_totalPercentage.toFixed(0)}}%
+                                          </span>
+                                          <span *ngIf ="bioPowoer_engergyResource">
+                                              {{bioPowoer_engergyResource}} {{bioPower_totalPercentage.toFixed(0)}}%
+                                          </span>
+
+                                          <span *ngIf ="gasPower_engergyResource">
+                                              {{gasPower_engergyResource}} {{gasPower_totalPercentage.toFixed(0)}}%
+                                          </span>
+
+                                          <span *ngIf ="coalPower_engergyResource">
+                                              {{coalPower_engergyResource}} {{coalPower_totalPercentage.toFixed(0)}}%
+                                          </span>
+
+                                          <span *ngIf ="dieselPower_engergyResource">
+                                              {{dieselPower_engergyResource}} {{dieselPower_totalPercentage.toFixed(0)}}%
+                                          </span>
+                                    </span>
+                                  </a>
+                                  <a class="nav-item nav-link border-left-3" id="nav-contact-tab" data-toggle="tab"
+                                     href="#nav-power" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                      Power Storage
+                                      <span class="d-block">Haus: 55%   Auto: 90%</span>
+                                  </a>
+                                  <a class="nav-item nav-link border-left-4" id="nav-about-tab" data-toggle="tab"
+                                     href="#nav-tradet" role="tab" aria-controls="nav-about" aria-selected="false">
+                                      Trade
+
+                                      <span class="d-block">Sale from 20 Rp. / kWh</span>
+                                  </a>
+                              </div>
+                          </div>
+
+                          <div class="col-md-10 padding-0">
+                              <div class="tab-content py-3 px-3 px-sm-0 padding-0" id="nav-tabContent">
+                                  <div class="tab-pane fade show active" id="nav-current" role="tabpanel"
+                                       aria-labelledby="nav-home-tab">
+
+
+                                      <div class="h-1 color-h"><span class="text-h">Current Consumption</span></div>
+
+
+                                      <div class="row">
+                                          <div class="col-12">
+                                              <div class="row background-white">
+                                                  <div class="col-1">
+                                                      <img class="img-cons" src="../../../assets/img/consumption-logo.png">
+                                                  </div>
+                                                  <div class="col-5 mT-10">
+                                                      <h2 class="cons-h">Total Consumption</h2>
+                                                      <h4 class="cons-h4">Verbrauch <span *ngIf="totalEnergyConsumed"
+                                                              class="span-h4"> {{totalEnergyConsumed}} W </span></h4>
+                                                  </div>
+                                                  <!-- <div class="col-6 text-right">
+                                                      <button type="button" class="btn btn-end-contract btn-sell"
+                                                              data-toggle="modal" data-target="#sell-energy">Open To
+                                                          Sell Others
+                                                      </button>
+                                                  </div> -->
+
+                                                  <div class="col-12 mT-20">
+                                                      <div id="consumption" class="consumption-chart"></div>
+                                                  </div>
+
+
+                                                  <div class="col-12 mT-50">
+                                                      <div class="table-responsive">
+                                                          <table class="table table-striped">
+                                                              <thead>
+                                                              <tr>
+                                                                  <th scope="col">Name</th>
+                                                                  <th scope="col">Energy Consumed</th>
+                                                                  <th scope="col">TimeStamp</th>
+                                                              </tr>
+                                                              </thead>
+                                                              <tbody>
+                                                              <tr *ngFor="let energy of energies; let i=index">
+
+                                                                  <td>{{user}}</td>
+                                                                  <td>{{energy}} KWH</td>
+                                                                  <td>{{timestamps[i]}}</td>
+                                                              </tr>
+                                                              </tbody>
+                                                          </table>
+                                                      </div>
+                                                  </div>
+
+
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="nav-mix" role="tabpanel"
+                                       aria-labelledby="nav-profile-tab">
+                                      <div class="h-1 color-h1"><span class="text-h">STORM MIX</span></div>
+
+
+                                      <!--
+                                          Energy Mix Component
+                                      -->
+                                    <app-user-energy-mix></app-user-energy-mix>
+
+                                  </div>
+                                  <div class="tab-pane fade" id="nav-power" role="tabpanel"
+                                       aria-labelledby="nav-contact-tab">
+                                      <div class="h-1 color-h2"><span class="text-h">Power Storage</span></div>
+<!-- Power Storge Component-->
+
+                                     <app-user-power-storage></app-user-power-storage>
+                                  </div>
+                                  <div class="tab-pane fade" id="nav-tradet" role="tabpanel"
+                                       aria-labelledby="nav-about-tab">
+                                      <div class="h-1 color-h3"><span class="text-h">Trade</span></div>
+
+                                      <!-- Trade Component-->
+                                      <app-user-trade></app-user-trade>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+
+
+              </div>
+          </div>
+      </main>
+      <footer class="bdT ta-c pT-20 lh-0 fsz-sm ">
+          <p class="mB-0">Copyrights &copy; 2018 Rengoo, All Rights Reserved</p>
+      </footer>
+  </div>
+</div>

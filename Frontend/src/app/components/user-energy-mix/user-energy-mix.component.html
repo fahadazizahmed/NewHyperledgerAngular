@@ -1,0 +1,161 @@
+<div class="row">
+    <div class="col-12">
+        <div class="row background-white">
+            <div class="col-1">
+                <img class="img-cons" src="../../../assets/img/storm.png">
+            </div>
+            <div class="col-5 mT-10">
+                <h2 class="cons-h">STORM MIX</h2>
+                <h4 class="cons-h4">Wind/Wasser/Solar </h4>
+            </div>
+            <div class="col-6 text-right">
+                <button type="button" class="btn btn-end-contract btn-energy" data-toggle="modal" data-target="#sell-energy">Add
+                    Energy
+                </button>
+            </div>
+
+            <div class="col-12 mT-50">
+                <div class="row mT-10 nine-cols">
+                    <div class="col text-center border-charts" *ngIf="windPowoer_engergyResource">
+                        <div class="c100 p{{windPower_totalPercentage.toFixed(0)}} blue">
+                            <span>{{windPower_totalPercentage.toFixed(0)}}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="img-chart" src="../../../assets/img/wind.png">
+                            <p class="wind-text m-b-10-negv">{{windPowoer_engergyResource}}</p>
+                            <p class="wind-text">{{windPower_totalunitsPurchased}} KWH</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col text-center border-charts" *ngIf="solarPowoer_engergyResource">
+                        <div class="c100 p{{solarPower_totalPercentage.toFixed(0)}} blue">
+                            <span>{{solarPower_totalPercentage.toFixed(0)}}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="img-chart" src="../../../assets/img/solar.png">
+                            <p class="wind-text m-b-10-negv">{{solarPowoer_engergyResource}}</p>
+                            <p class="wind-text">{{solarPower_totalunitsPurchased}} KW</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col text-center border-charts" *ngIf="nuclear_engergyResource">
+                        <div class="c100 p{{nuclear_totalPercentage.toFixed(0)}} blue">
+                            <span>{{nuclear_totalPercentage.toFixed(0)}}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="img-chart" src="../../../assets/img/nuclear.png">
+                            <p class="wind-text m-b-10-negv">{{nuclear_engergyResource}}</p>
+                            <p class="wind-text">{{nuclear_totalunitsPurchased}} KW</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col text-center border-charts" *ngIf="geoPower_engergyResource">
+                        <div class="c100 p{{geoPower_totalPercentage.toFixed(0)}} blue">
+                            <span>{{geoPower_totalPercentage.toFixed(0)}}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="img-chart" src="../../../assets/img/wasser.png">
+                            <p class="wind-text m-b-10-negv">{{geoPower_engergyResource}}</p>
+                            <p class="wind-text">{{geoPower_totalunitsPurchased}} KW</p>
+
+                        </div>
+                    </div>
+
+                    <div class="col text-center border-charts" *ngIf="bioPowoer_engergyResource">
+                        <div class="c100 p{{bioPower_totalPercentage.toFixed(0)}} blue">
+                            <span>{{bioPower_totalPercentage.toFixed(0)}}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="img-chart" src="../../../assets/img/geopower.png">
+                            <p class="wind-text m-b-10-negv">{{bioPowoer_engergyResource}}</p>
+                            <p class="wind-text">{{bioPower_totalunitsPurchased}} KW</p>
+                        </div>
+                    </div>
+
+                    <div class="col text-center border-charts" *ngIf="coalPower_engergyResource">
+                        <div class="c100 p{{coalPower_totalPercentage.toFixed(0)}}  blue">
+                            <span>{{coalPower_totalPercentage.toFixed(0)}}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="img-chart" src="../../../assets/img/bio.png">
+                            <p class="wind-text m-b-10-negv">{{coalPower_engergyResource}}</p>
+                            <p class="wind-text">{{coalPower_totalunitsPurchased}} KW</p>
+
+                        </div>
+                    </div>
+
+
+                    <div class="col text-center border-charts" *ngIf="gasPower_engergyResource">
+                        <div class="c100 p{{gasPower_totalPercentage.toFixed(0)}} blue">
+                            <span>{{gasPower_totalPercentage.toFixed(0)}}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="img-chart" src="../../../assets/img/diesal.png">
+                            <p class="wind-text m-b-10-negv">{{gasPower_engergyResource}}</p>
+                            <p class="wind-text">{{gasPower_totalunitsPurchased}} KW</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col text-center border-charts" *ngIf="dieselPower_engergyResource">
+                        <div class="c100 p{{dieselPower_totalPercentage.toFixed(0)}} blue">
+                            <span>{{dieselPower_totalPercentage.toFixed(0)}}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="img-chart" src="../../../assets/img/coal.png">
+                            <p class="wind-text m-b-10-negv">{{dieselPower_engergyResource}}</p>
+                            <p class="wind-text">{{dieselPower_totalunitsPurchased}} KW</p>
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="row mT-20 nine-cols">
+
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

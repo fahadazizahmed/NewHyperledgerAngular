@@ -1,0 +1,174 @@
+<div class="row">
+  <div class="col-12">
+      <div class="row background-white">
+          <div class="col-1">
+              <img class="img-cons border-radius-100" src="../../../assets/img/default.png">
+          </div>
+          <div class="col-11">
+              <h2 class="cons-h mT-20">John Doe :<span
+                      class="cons-h"> Seller</span></h2>
+
+          </div>
+
+          <div class="col-12 mT-50">
+              <div class="table-responsive">
+                  <table class="table table-striped">
+                      <thead>
+                      <tr>
+                          <th scope="col">Username</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Energy Type</th>
+                          <th scope="col">Available Energy</th>
+                          <th scope="col">Distance</th>
+                          <th>Actions</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let res of responseData">
+
+                          <td>{{res.name}}</td>
+                          <td>{{res.pricePerKWH}}</td>
+                          <td>{{res.energyProductionDetails[0].energyResource}}</td>
+                          <td>{{res.energyProductionDetails[0].production}}</td>
+                          <td>{{res.distanceFromGrid}}</td>
+                          <td>
+                              <button type="button"
+                                      class="btn btn-danger btn-end-contract"
+                                      data-toggle="modal"
+                                      data-target="#sell-energy"
+                                      (click)="openEnergyModal(res.userID)"
+                                      >Buy Energy
+                              </button>
+                          </td>
+                      </tr>
+                    
+                     
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="row" *ngIf="!buyersopenToOffer">
+    <div class="col-12">
+        <div class="row background-white">
+            <div class="col-1">
+                <img class="img-cons border-radius-100" src="../../../assets/img/default.png">
+            </div>
+            <div class="col-11">
+                <h2 class="cons-h mT-20">John Doe :<span
+                        class="cons-h"> PRODUCER</span></h2>
+  
+            </div>
+  
+            <div class="col-12 mT-50">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Distance From Grid</th>
+                            <th scope="col">Blance</th>
+                        
+                            
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let res of buyersopenToOffer">
+  
+                            <td>{{res.name}}</td>
+                            <td>{{res.distanceFromGrid}}</td>
+                            <td>{{res.totalProduction}}</td>
+                            
+                        </tr>
+                      
+                       
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+<!--Sell Energy Modal-->
+
+<div class="modal fade" id="sell-energy" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Buy Energy</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Energy Type</th>
+                            <th scope="col">Total Available</th>
+                            <th scope="col"> Energy Value</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr >
+
+                            <td>{{resouceEngergy}}</td>
+                            <td>{{productionDetail}}</td>
+                            <td>
+                                <form #f="ngForm" (ngSubmit)="submit(f)">
+                                    <div class="form-group mB-0">
+                                        <!-- <input class="form-control input-table
+                                        name="firstName" 
+                                       #firstName="ngModel"
+                                         type="text" placeholder="1 MW"> -->
+
+                                         <input type="text" 
+                                         class="form-control input-table"
+                                         ngModel 
+                                         name="purchase" 
+                                         #purchase="ngModel"
+                                         placeholder=""
+                                         
+                                  >
+                                    </div>
+
+                                    <div class="row padding-10">
+                    
+
+
+                                       
+                                                <button class="btn btn-end-contract btn-sell-energy"
+                                                [disabled]="!f.valid"
+                                                >Buy Energy</button>
+                                          
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                       
+                    
+                        </tbody>
+                    </table>
+                </div>
+
+               
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--End Sell Energy Modal-->

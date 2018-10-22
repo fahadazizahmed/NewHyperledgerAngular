@@ -1,0 +1,30 @@
+<app-navbar ></app-navbar>
+<div *ngIf="user">
+    <h2 class="page-header">{{user.name}}</h2>
+    <ul class="list-group">
+      <li class="list-group-item">Username : {{user.username}}</li>
+      <li class="list-group-item">Email : {{user.email}}</li>
+    </ul>
+  </div>
+  <!-- Buttons -->
+  <br/>
+  <table class="table table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users$">
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td> <span  class="glyphicon glyphicon-pencil" (click)="openModal(user._id)">Edit</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <app-user-model ></app-user-model>

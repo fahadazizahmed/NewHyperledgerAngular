@@ -1,0 +1,16 @@
+agm-map {
+  height: 600px;
+}
+.gm-style .gm-style-iw {
+    font-weight: 300;
+    font-size: 13px;
+    overflow: hidden;
+    left: 25px !important;
+}
+agm-info-window {
+  padding:0;
+}
+body > app-root > app-map > agm-map > div.agm-map-container-inner.sebm-google-map-container-inner > div > div > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(4) > div > div:nth-child(1) > div:nth-child(4){
+  left: -11px;agm-info-window{
+  }
+}
